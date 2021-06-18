@@ -1,0 +1,203 @@
+---
+title: "Basic Statistics"
+author: "Sergio Diez Hermano"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    highlight: tango
+    df_print: paged
+    code_folding: show
+    toc: yes
+    toc_depth: 4
+    toc_float:
+      collapsed: no
+  pdf_document:
+    toc: yes
+    toc_depth: '4'
+---
+
+```{r setup, include=FALSE}
+require(knitr)
+# include this code chunk as-is to set options
+opts_chunk$set(comment = NA, prompt = FALSE, fig.height=5, fig.width=5, dpi=300, fig.align = "center", message = FALSE, warning = FALSE, cache=FALSE)
+Sys.setlocale("LC_TIME", "C")
+```
+
+
+```{r, include=FALSE}
+# Libraries and functions
+suppressMessages(library(ggplot2))
+suppressMessages(library(dplyr))
+```
+
+# How to organize data 
+
+Datasheets may be organized in <span style="color: orange;">**short**</span> or <span style="color: blue;">**long**</span> format. 
+
+- <u><span style="color: orange;">*Short*</span> format</u>: Columns are experimental conditions, rows have no meaning.
+- <u><span style="color: blue;">*Long*</span> format</u>: Columns are measurements, rows are individual observations.
+
+<span style="color: red;"><u>**GOAL**</u></span> Represent all data following <span style="color: blue;">**long**</span> format. That way the identity of each row is preserved (row = observation), and you can keep adding new measurements as new columns
+
+```{r, include = FALSE}
+# Example data
+n <- 6
+ctrl <- rnorm(n, 2, 1)
+exp1 <- rnorm(n, 5, 2)
+exp2 <- rnorm(n, 8, 2)
+factor <- rep(c("ctrl", "exp1", "exp2"), each = n)
+spec <- rep(c("Fcir", "Cpar"), each = n*3)
+```
+
+## Short format example {.tabset}
+
+### One factor
+
+<span style="color: gray;">*Experimental group (ctrl, exp1, exp2)*</span>
+
+```{r}
+data.frame(ctrl, exp1, exp2)
+```
+
+### Two factors
+
+<span style="color: gray;">*Experimental group (ctrl, exp1, exp2)*</span> x <span style="color: gray;">*Species (Fusarium circinatum, Chryphonectria parasitica)*</span>
+
+```{r}
+data.frame(Fcir.ctrl = ctrl, Fcir.exp1 = exp1, Fcir.exp2 = exp2, 
+           Cpar.ctrl = ctrl+1.02, Cpar.exp1 = exp1+2.31, Cpar.exp2 = exp2+3.27)
+```
+
+## Long format example {.tabset}
+
+### One factor
+
+<span style="color: gray;">*Experimental group (ctrl, exp1, exp2)*</span>
+
+```{r}
+data.frame(group = factor, 
+           variable = c(ctrl, exp1, exp2))
+```
+
+### Two factors
+
+<span style="color: gray;">*Experimental group (ctrl, exp1, exp2)*</span>
+ x <span style="color: gray;">*Species (Fusarium circinatum, Chryphonectria parasitica)*</span>
+
+```{r}
+data.frame(species = spec, 
+           group = c(factor, factor), 
+           variable = c(ctrl, exp1, exp2, ctrl+1.02, exp1+2.31, exp2+3.27))
+```
+
+# Basic descriptives
+
+Before doing any analysis it is advisable to **plot** and **summarize** the data. Common descriptors include:
+
+- <u>Numeric variables</u>
+  - Mean and standard deviation
+  - Median and interquartilic range
+  - Plot: histogram (continuous variable), correlation
+
+- <u>Categoric variables (factors)</u>
+  - Frequency tables
+  - Plot: barplots
+
+- <u>Numeric x Factor</u>
+  - Mean/median per factor level
+  - Plot: boxplot (**avoid** barplot)
+  
+Let's use the following data as example:
+
+- <u>Numeric variables</u>: <span style="color: gray;">*mRNA quantity*</span>, <span style="color: gray;">*protein quantity*</span>
+- <u>Factors</u>: <span style="color: gray;">*Species (Fusarium circinatum, Chryphonectria parasitica)*</span>, <span style="color: gray;">*Experimental group (ctrl, exp1, exp2)*</span>
+
+Here you can see a few rows of the data:
+
+```{r}
+# Example data
+n <- 30
+var1.ctrl <- rnorm(n, 2, 1)
+var1.exp1 <- rnorm(n, 5, 2)
+var1.exp2 <- rnorm(n, 8, 2)
+var2.ctrl <- rnorm(n, 12, 1)
+var2.exp1 <- rnorm(n, 10, 2)
+var2.exp2 <- rnorm(n, 18, 2)
+factor <- rep(c("ctrl", "exp1", "exp2"), each = n)
+spec <- rep(c("Fcir", "Cpar"), each = n*3)
+
+dataExample <- data.frame(species = spec, 
+                          group = c(factor, factor), 
+                          mrna = c(var1.ctrl, var1.exp1, var1.exp2, var1.ctrl+1.02, var1.exp1+2.31, var1.exp2+3.27),
+                          protein = c(var2.ctrl, var2.exp1, var2.exp2, var2.ctrl+0.58, var2.exp1+5.84, var2.exp2+9.21))
+dataExample %>% group_by(species, group) %>% sample_n(size = 3)
+```
+
+## Numeric variables {.tabset}
+
+### Descriptive
+
+```{r}
+psych::describe(dataExample[, c("mrna", "protein")])
+```
+
+### Plots
+
+```{r, fig.width=15}
+par(mfrow=c(1,3))
+hist(dataExample$mrna, main = "", xlab = "mRNA")
+hist(dataExample$protein, main = "", xlab = "Protein")
+plot(mrna ~ protein, data = dataExample, pch = 19)
+```
+
+## Factor {.tabset}
+
+### Descriptive
+
+```{r}
+table(dataExample[, c("species", "group")])
+```
+
+### Plots
+
+```{r, fig.height=4, fig.width=4}
+par(xpd=T, cex.axis = 0.8)
+barplot(table(dataExample[, c("species", "group")]), beside = T, 
+        col= c("blue", "orange"), ylab = "Frequency")
+legend(2.5, 35,  c("Fcir", "Cpar"), fill = c("blue", "orange"), bty = "n",ncol = 2)
+```
+
+## Numeric x Factor {.tabset}
+
+### Descriptive
+
+```{r}
+do.call(data.frame, aggregate(mrna ~ group + species, data = dataExample, 
+                              FUN = function(x) c(mean = mean(x), sd = sd(x), 
+                                                  quantile(x, .25), median = median(x), quantile(x, .75)) ) )
+
+do.call(data.frame, aggregate(protein ~ group + species, data = dataExample, 
+                              FUN = function(x) c(mean = mean(x), sd = sd(x), 
+                                                  quantile(x, .25), median = median(x), quantile(x, .75)) ) )
+```
+
+### Plots
+
+```{r, fig.width=10}
+dataExample$groupSpec <- interaction(dataExample$group, dataExample$species)
+
+mrnaBox <- ggplot(dataExample, aes(groupSpec, mrna)) +
+  geom_boxplot() +
+  geom_jitter(width=0.15) +
+  theme_bw(16) +
+  theme(axis.text.x = element_text(angle = 45, hjust=1))
+
+proteinBox <- ggplot(dataExample, aes(groupSpec, protein)) +
+  geom_boxplot() +
+  geom_jitter(width=0.15) +
+  theme_bw(16) +
+  theme(axis.text.x = element_text(angle = 45, hjust=1))
+
+ggpubr::ggarrange(mrnaBox, proteinBox,
+          ncol = 2, nrow = 1)
+```
