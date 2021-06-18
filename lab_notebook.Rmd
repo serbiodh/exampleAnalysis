@@ -1,0 +1,448 @@
+---
+title: "iuFOR Notebook Lab"
+author: "Sergio Diez Hermano"
+date: '`r format(Sys.Date(),"%e de %B, %Y")`'
+output:
+  html_document:
+      highlight: tango
+      toc: yes
+      toc_depth: 4
+      toc_float:
+        collapsed: yes
+---
+
+```{r setup, include=FALSE}
+require(knitr)
+# include this code chunk as-is to set options
+opts_chunk$set(comment = NA, prompt = FALSE, fig.height=5, fig.width=5, dpi=300, fig.align = "center", echo = TRUE, message = FALSE, warning = FALSE, cache=FALSE)
+# Sys.setenv(RSTUDIO_PANDOC = "C:/Program Files/Pandoc")
+Sys.setlocale("LC_TIME", "C")
+```
+
+Help with Markdown syntaxis --> https://www.markdownguide.org/basic-syntax/
+
+&nbsp;
+
+# 2021
+
+## May
+
+### 2021/05/28
+
+**<u>Seminario</u>** Jonatan Niño, "SUPERA: SUstainable Plant health by Environmental RNAi to reduce disease impacts on Agriculture and forestry"
+
+- SIGS: spray-induced gene silencing (direct application, also available in F.graminearum)
+    - Pros: No transgenic plants, pre and post-harvest
+    - Cons: Transient silencing effect, RNA inestability
+      - How to overcome inestability? Organic nanovesicles or inorganic nanoparticles
+
+- Long summary in "General > Seminars"
+
+### 2021/05/31
+
+**<u>Lab meeting</u>**
+
+- Ideas: base de datos relacional inventario <-> pedidos
+- Preparar electronic notebook
+
+## June
+
+### 2021/06/01
+
+**<u>Papers and highlights</u>**
+
+**Son M, Yu J, Kim K-H (2015) Five Questions about Mycoviruses.** PLoS Pathog 11(11): e1005172. https://doi.org/10.1371/journal.ppat.1005172
+
+- Highlights:
+  1. most mycoviruses lack an extracellular route for infection; 
+  2. mycoviruses are transmitted intercellularly only through cell division, sporulation, and cell fusion;
+  3. mycoviruses apparently <u>lack a movement protein</u>, which is essential for the life cycle of animal and plant viruses
+
+- Long summary in @General -> @Papers
+
+**Bian, R., Andika, I. B., Pang, T., Lian, Z., Wei, S., Niu, E., ... & Sun, L. (2020). Facilitative and synergistic interactions between fungal and plant viruses.** Proceedings of the National Academy of Sciences, 117(7), 3779-3788. https://doi.org/10.1073/pnas.1915996117
+
+- Highlights:
+  1. CHV1 in *Nicotiana tabacum* is able to systemically infect plants after mechanical coinoculations with plant viruses such as tobacco mosaic virus (TMV) or when inoculated to transgenic plants expressing the TMV movement protein. 
+  2. In the fungal inoculation experiment, plant virus infections in plants enable horizontal transfer of CHV1 from fungi to plants and to other heterologous fungal species.
+  3. Facilitative effect of plant viruses in spreading fungal viruses
+
+- Long summary in @General -> @Papers
+
+### 2021/06/02
+
+**<u>Reunión Julio 13.00-13.30</u>**
+
+- Desarrollo algoritmos propios de ML (ej. clasificación imágenes)
+- **Priorizar** Proyecto Junta 
+  - Replicar pipelines metagenómica cross-kingdom
+  - IDEA: Buscar en FgV genes compatibles con proteínas de movilidad del TBM. Basado en Bian 2020 (https://doi.org/10.1073/pnas.1915996117)
+- Ayuda estadística otros proyectos
+
+**<u>Papers and highlights</u>**
+
+**Andika, I. B., Wei, S., Cao, C., Salaipeth, L., Kondo, H., & Sun, L. (2017). Phytopathogenic fungus hosts a plant virus: A naturally occurring cross-kingdom viral infection.** Proceedings of the National Academy of Sciences, 114(46), 12267-12272. https://doi.org/10.1073/pnas.1714916114
+
+- Highlight:
+  - Viruses may spread between the same host species or into taxonomically distinct organisms. The occurrences of cross-kingdom viral infection for certain virus groups are suggested by the current virus taxonomic data. In particular, several plants and fungal viruses show close phylogenetic relationships, but productive transmission of virus between plant and fungal hosts in nature has not been directly demonstrated. Here, we describe the natural infection of Rhizoctonia solani fungus by a plant virus, cucumber mosaic virus (CMV). We further demonstrate that R. solani can acquire and transmit CMV during plant infection. Our findings are evidence of cross-kingdom virus transmission from the plant to fungus.
+
+**Nerva, L., Varese, G. C., Falk, B. W., & Turina, M. (2017). Mycoviruses of an endophytic fungus can replicate in plant cells: evolutionary implications.** Scientific reports, 7(1), 1-11. https://doi.org/10.1038/s41598-017-02017-3
+
+- Highlight:
+  - Here we tested if mycoviruses derived from a marine plant endophyte can replicate in plant cells. For this purpose, we used partially purified viral particles from isolate MUT4330 of *Penicillium aurantiogriseum var. viridicatum* which harbors six virus species, some having dsRNA and some positive-strand ssRNA genomes. These were transfected into three distinct plant protoplast cell systems. Time-course analysis of absolute RNA accumulation provided for the first time evidence that viruses of two species belonging to the Partitiviridae and Totiviridae families, can replicate in plant cells without evidence of host adaptation, i.e, changes in their nucleotide sequence.
+
+### 2021/06/03
+
+**<u>Bioinformatics</u>**
+
+Herramientas para analizar ensamblajes de QIIME (Python) y protocolos de metagenómica completos en R:
+
+- *Integrating QIIME2 and R for data visualization and analysis using qiime2R* --> tutorial (https://forum.qiime2.org/t/tutorial-integrating-qiime2-and-r-for-data-visualization-and-analysis-using-qiime2r/4121) <span style="color: red;">IN PROGRESS</span>
+
+- *MegaR: an interactive R package for rapid sample classification and phenotype prediction using metagenome profiles and machine learning* (https://doi.org/10.1186/s12859-020-03933-4) <span style="color: red;">IN PROGRESS</span>
+
+**<u>Papers and highlights</u>**
+
+**Yu, J., Park, J. Y., Heo, J. I., & Kim, K. H. (2020). The ORF2 protein of Fusarium graminearum virus 1 suppresses the transcription of FgDICER2 and FgAGO1 to limit host antiviral defences.** Molecular plant pathology, 21(2), 230-243. https://doi.org/10.1111/mpp.12895
+
+- Highlight:
+  - By comparing transcription levels of FgDICER2 and FgAGO1 in fungal transformed mutants expressing each open reading frame (ORF) of FgV1 with or without a hairpin RNA construct, we determined that reduction of FgDICER2 and FgAGO1 transcript levels requires only the FgV1 ORF2-encoded protein (pORF2). Moreover, we confirmed that the pORF2 binds to the upstream region of FgDICERs and FgAGOs in vitro. These combined results indicate that the pORF2 of FgV1 counteracts the RNAi defence response of F. graminearum by interfering with the induction of FgDICER2 and FgAGO1 in a promoter-dependent manner.
+  
+**Yu, J., & Kim, K. H. (2021). A phenome-wide association study of the effects of Fusarium graminearum transcription factors on Fusarium graminearum virus 1 infection.** Frontiers in microbiology, 12, 61. https://doi.org/10.3389/fmicb.2021.622261  
+
+- Highlight:
+  - Using gene-deletion mutant library of 657 putative TFs in F. graminearum, we transferred FgV1 by hyphal anastomosis to screen transcription factors that might be associated with viral replication or symptom induction. FgV1-infected TF deletion mutants were divided into three groups according to the mycelial growth phenotype compare to the FgV1-infected wild-type strain (WT-VI)
+  - By conducting real-time quantitative reverse transcription polymerase chain reaction, we observed close association between FgV1 RNA accumulation and phenotypic differences of FgV1-infected TF deletion mutants in each group, i.e., increased and decreased dsRNA accumulation in Group 1 and Group 3, respectively. Taken together, our analysis provides an opportunity to identify host’s regulator(s) of FgV1-triggered signaling and antiviral responses and helps to understand complex regulatory networks between FgV1 and F. graminearum interaction
+
+<center><img src="https://www.frontiersin.org/files/Articles/622261/fmicb-12-622261-HTML/image_m/fmicb-12-622261-g002.jpg" width="500"></center>
+
+### 2021/06/04
+
+**<u>Papers and highlights</u>**
+
+**Heo, J. I., Yu, J., Choi, H., & Kim, K. H. (2020). The signatures of natural selection and molecular evolution in Fusarium graminearum virus 1.** Frontiers in microbiology, 11. https://doi.org/10.3389/fmicb.2020.600775
+
+- Highlights:
+  - To understand FgV1 evolution and/or adaptation, we conducted mutation accumulation (MA) experiments by serial passage of FgV1 alone or with FgV2, 3, or 4 in *F. graminearum*. We expected that the effects of positive selection would be highly limited because of repeated bottleneck events. 
+
+&nbsp;
+  
+<center><img src="https://www.frontiersin.org/files/Articles/600775/fmicb-11-600775-HTML/image_m/fmicb-11-600775-t001.jpg" width = "500"></center>
+
+&nbsp;
+
+  - To determine whether selection on the virus was positive, negative, or neutral, we assessed both the phenotypic traits of the host fungus and the RNA sequences of FgV1. We inferred that there was positive selection on beneficial mutations in FgV1 based on the ratio of non-synonymous to synonymous substitutions (dN/dS), on the ratio of radical to conservation amino acid replacements (pNR/pNC), and by changes in the predicted protein structures. 
+  - In support of this inference, we found evidence of positive selection only in the open reading frame 4 (ORF4) protein of DK21/FgV1 (MA line 1); mutations at amino acids 163A and 289H in the ORF4 of MA line 1 affected the entire structure of the protein predicted to be under positive selection. We also found, however, that deleterious mutations were a major driving force in viral evolution during serial passages. Several mutations in MA line 1 were not shared with any of the other four MA lines (PH-1/FgV1, PH-1/FgV1 + 2, PH-1/FgV1 + 3, and PH-1/FgV1 + 4). This suggests that evolutionary pathways of the virus could differ with respect to hosts and also with respect to co-infecting viruses. The data also suggested that the differences among MA lines might also be explained by mutational robustness and other unidentified factors. 
+  
+### 2021/06/07
+
+**<u>Lab meeting</u>**
+
+- Muestras Proyecto JCyL Virus:
+  - En vez de 1 sp de insecto u hongo, muestrear más para no arriesgar que no haya habido contacto entre ellos
+  - Muestreos planificados:
+    - Áreas y organismos vegetales
+      - Bosques de coníferas (*Pinus sylvestris*) en Valle de Mena (Burgos)
+      - Bosques de frondosas caducifolias (*Castanea sativa*) en Linares de Riofrío (Salamanca)
+      - Bosques de frondosas perennes (*Quercus ilex ssp. ballota*) en La Alamedilla (Salamanca)
+    - Hongos e insectos fitófagos asociados a los árboles anteriores:
+      - Coníferas --> hongo *Fusarium circinatum*, coleóptero *Monochamus galloprovincialis* (adultos se alimentan de brotes tiernos de Pinus sp. y dispersan la enfermedad del nematodo de la madera del pino).
+      - Castaño --> hongo *Chryphonectria parasítica*, coleóptero *Curculio elephas* (galerías en el fruto).
+      - Encina --> oomiceto *Phytophthora cinnamomi*, larvas de coleóptero *Cerambyx velutinus* (galerías en madera de ramas y troncos).
+
+
+**<u>Papers and highlights</u>**
+
+**Mahillon, M., Romay, G., Liénard, C., Legrève, A., & Bragard, C. (2020). Description of a Novel Mycovirus in the Phytopathogen Fusarium culmorum and a Related EVE in the Yeast Lipomyces starkeyi.** Viruses, 12(5), 523. https://doi.org/10.3390/v12050523
+
+- Highlight:
+  - A new mycovirus was found in the Fusarium culmorum strain A104-1 originally sampled on wheat in Belgium. This novel virus, for which the name Fusarium culmorum virus 1 (FcV1) is suggested, is phylogenetically related to members of the previously proposed family ‘’Unirnaviridae’’. FcV1 has a monopartite dsRNA genome of 2898 bp that harbors two large non-overlapping ORFs. A typical -1 slippery motif is found at the end of ORF1, advocating that ORF2 is translated by programmed ribosomal frameshifting. While ORF2 exhibits a conserved replicase domain, ORF1 encodes for an undetermined protein. Interestingly, a hypothetically transcribed gene similar to unirnaviruses ORF1 was found in the genome of Lipomyces starkeyi, presumably resulting from a viral endogenization in this yeast.
+
+&nbsp;
+
+<center><img src="https://www.mdpi.com/viruses/viruses-12-00523/article_deploy/html/images/viruses-12-00523-g001.png" width="500"></center>
+
+&nbsp;
+
+- Methods in @General -> @Papers
+
+### 2021/06/08
+
+**<u>Bioinformatics</u>**
+
+Useful 101 for metagenomic experimental design and analysis:
+
+- *Experimental Design and Bioinformatics Analysis for the Application of Metagenomics in Environmental Sciences and Biotechnology*. (https://doi.org/10.1021/acs.est.5b03719) <span style="color: red;">IN PROGRESS</span>
+
+Entorno de SCAYLE, infraestructura y acceso a CALENDULA: https://www.scayle.es/manual/es/hpc
+
+- Leída toda la Guía de Usuarios. Tener en cuenta sobre todo el punto "1.Guía de Usuarios" (frontends, nodos, entorno de cálculo, software instalado)
+  - Tienen EnTAPS, QIIME2, R 3.6.2
+  - Tienen todo el software para análisis de expresión diferencial en RNA-seq (quality control, trimming, alignment, enrichment)
+- Instalado WSL2 para acceder a capa de Ubuntu sobre Windows. 
+- Instalado MobaXterm para intercambio de ficheros entre máquina local y CALENDULA.
+
+**<u>Papeleo</u>**
+
+- Instalada VPN de la UVa (Guía: https://stic.uva.es/export/sites/stic/_documentos/Configuracion-y-uso-de-la-VPN-UVa-v2.pdf)
+
+### 2021/06/09
+
+**<u>Machine Learning</u>**
+
+*Jonatan* **Zhang, T., Chang, H., Zhang, B., Liu, S., Zhao, T., Zhao, E., ... & Zhang, H. (2020). Transboundary Pathogenic microRNA Analysis Framework for Crop Fungi Driven by Biological Big Data and Artificial Intelligence Model.** Computational Biology and Chemistry, 107401. https://doi.org/10.1016/j.compbiolchem.2020.107401 <span style="color: red;">IN PROGRESS</span>
+
+**<u>Papers and highlights</u>**
+
+*Jonatan* **Pusz-Bochenska, K., Perez-Lopez, E., Dumonceaux, T. J., Olivier, C., & Wist, T. J. (2020). A rapid, simple, laboratory and field-adaptable DNA extraction and diagnostic method suitable for insect-transmitted plant pathogen and insect identification.** Plant Health Progress, 21(1), 63-68. https://doi.org/10.1094/PHP-09-19-0063-FI
+
+- Highlights:
+  - Detection of plant pathogens on field within a few hours
+  - LAMP assay using the chaperonin-60 target detects a higher proportion of samples positive for ‘Candidatus Phytoplasma asteris’ than conventional PCR targeting 16S rRNA
+  - Portable test, "yes/no" --> time to positive could have been used as quantitative estimation of pathogen presence (inverse correlation), but results were not conclusive
+  - Aplicar a proyecto Junta virus RNA? --> problema: en el paper detectan un único patógeno protista
+  
+- Citado por:
+  - **Hu, Y., Wilson, S., Schwessinger, B., & Rathjen, J. P. (2020). Blurred lines: integrating emerging technologies to advance plant biosecurity.** Current Opinion in Plant Biology, 56, 127-134. https://doi.org/10.1016/j.pbi.2020.04.011
+    - Mencionado en el abstract: *"...In this review we describe recent progress in <span style="color: green;">developing modern plant disease diagnostics based on detection of pathogen components, high-throughput image analysis, remote sensing, and machine learning</span>. We discuss how different diagnostic approaches can be integrated in detection frameworks that can work at different scales and account for sampling biases."* <span style="color: red;">**IMPORTANT** CHECK IN PROGRESS</span>
+
+### 2021/06/10
+
+**<u>Bioinformatics</u>**
+
+- Scotty --> power calculator for DE RNA-seq analysis (http://scotty.genetics.utah.edu/help.html#PilotFormat)
+  - Tienen otro software para trabajar con ficheros BAM en la web del grupo.
+  - Interesting papers from the same group:
+    - **Flygare, S., Simmon, K., Miller, C., Qiao, Y., Kennedy, B., Di Sera, T., ... & Schlaberg, R. (2016). Taxonomer: an interactive metagenomics analysis portal for universal pathogen detection and host mRNA expression profiling.** Genome biology, 17(1), 1-18. https://doi.org/10.1186/s13059-016-0969-1 <span style="color: red;">IN PROGRESS</span>
+    - **Graf, E. H., Simmon, K. E., Tardif, K. D., Hymas, W., Flygare, S., Eilbeck, K., ... & Schlaberg, R. (2016). Unbiased detection of respiratory viruses by use of RNA sequencing-based metagenomics: a systematic comparison to a commercial PCR panel.** Journal of clinical microbiology, 54(4), 1000-1007.  https://doi.org/10.1128/JCM.03060-15 <span style="color: red;">IN PROGRESS</span>
+  
+### 2021/06/11
+
+### 2021/06/14
+
+**<u>Lab meeting</u>**
+
+Muestros Proyecto JCyL:
+
+- <u>Valle de Mena (Burgos).</u> *Pinus sylvestris*, *Monochamus galloprovincialis*, *Fusarium circinatum*
+	- No se ha descrito relación entre Mgal y Fcir, pero es factible que el insecto interaccione con las heridas que causa el hongo porque anida cerca. De momento no se ha encontrado Fcir en Mgal, ni como vector. Puede ser un carrier (porta el hongo de heridas a zonas vivas).
+	- *Tomicus piniperda* sí está descrito como asociado a Fcir, aunque en baja proporción
+	- En Valle de Mena hay más *Pinus radiata* que Psyl (Prad es una de las especies más invasoras junto al eucalipto). Muy posible se priorizará Prad
+	- También hay Fcir en Bierzo pero hay menos nivel de infestación.
+- <u>La Alamedilla (Salamanca).</u> Mucha encina y algunos robles. Dehesa privada: *Quercus ilex spp. ballota*, *Cerambyx velutinus*, *Phytophthora cinnamomi*.
+	- Posiblemente el vector sea *Cerambyx welensii*
+	- Hay más Qile en parcelas de Hugo don Sancho. También roble pero está desapareciendo. 
+	- Donde está Pcin no hay Cvel, aunque los dos atacan a las partes bajas del árbol. 
+		- Pcin es parásito primario, entra sobre tejidos vivos. Empieza la secuencia de hongos y desaparece.
+		- Cvel ataca a árboles ya enfermos, y en ese momento ya es probable que Pcin haya desaparecido.
+	- Cvel afecta más a *Quercus pyrenaica*. 
+	- En la parcela de castaño apenas hay chancro del hongo.
+- <u>Linares de Riofrío (Salamanca).</u> Tiene castaños y algunos robles, pero no chancro. <span style="color: red;">SE CAMBIARÁ POR BIERZO</span>. *Castanea sativa*, *Curculio elephas*, *Chryphonectria parasitica*.
+	- Cele afecta al fruto, y sus larvas no salen hasta octubre. No es el mejor candidato, pero tampoco se ha descrito un insecto vector de Cpar.
+		- Otro candidato: avispilla, crea agallas.
+	- Combinar Cele con *Dryocosmus kuriphilus*.
+- Valdellosa. Alcornoque (no se muestreará, sólo como idea). Insecto: Coraebus.
+
+SUGERENCIAS Y TAREAS:
+- Muestrear más insectos, y más hongos endófitos que puedan salir de los hongos ya planteados en el proyecto. 
+- Mirar espacio en -80
+- <span style="color: red;">PROPONER DISEÑO EXPERIMENTAL.</span>
+- Virus en hemolinfa del insecto? Reproducción virus cross-kingdom sólo comprobada en células autosómicas del insecto.
+- Priorizar insectos con estilos de vida interesantes con los objetivos del proyecto: que piquen al árbol, cosas parecidas.
+
+&nbsp;
+
+--------------------
+
+&nbsp;
+
+# General {.tabset}
+
+## Papers {.tabset}
+
+### A-F
+
+>**Bian, R., Andika, I. B., Pang, T., Lian, Z., Wei, S., Niu, E., ... & Sun, L. (2020). Facilitative and synergistic interactions between fungal and plant viruses.** Proceedings of the National Academy of Sciences, 117(7), 3779-3788. https://doi.org/10.1073/pnas.1915996117
+
+- Coinfection with a Plant Virus (TMV) Enables Systemic Infection of CHV1 in Plants.
+
+- CHV1 may lack genes that are usually encoded by plant viruses for spread throughout the plant. CHV1 was inoculated to *N. tabacum* plants that had been previously inoculated with TMV.
+  - CHV1 was readily detected by RT-PCR in the upper leaves at 7, 14, and 21 dpi (Fig. 1D). Moreover, CHV1 systemic infections were also observed in plants infected with each of three other plant (+)ssRNA viruses, potato virus Y (PVY, family Potyviridae, a plant picorna-like virus), potato virus X (PVX, genus Potexvirus, family Alphaflexiviridae, a plant alpha-like virus), or cucumber mosaic virus (CMV, family Bromoviridae, a plant alpha-like virus) (SI Appendix, Fig. S2).
+  - N. tabacum 30K --> transgenic plant expressing MP protein from TMV
+  - These results indicate that plant virus infections can facilitate CHV1 systemic infections in plants. Because viral movement proteins (MPs) are essential for cell-to-cell and long-distance transport of plant viruses (47, 48), we then inoculated CHV1 to a transgenic *N. tabacum* line expressing the TMV 30K MP protein (49). CHV1 RNA accumulation in uninoculated upper leaves and roots of the 30K plants was detected by RT-PCR (Fig. 1E and SI Appendix, Fig. S3A), indicating that the TMV MP facilitates systemic spread of CHV1.
+  - gRNA of CHV1 that systemically infected the N. tabacum 30K plants for ∼40 d contained seven nucleotide changes, and three caused amino acid substitutions (SI Appendix, Fig. S6). These results clearly validate CHV1 infectivity in plants and suggest that genome evolution may occur during invasion.
+  -To investigate whether other fungal viruses are also able to infect N. tabacum 30K plants systemically, we mechanically inoculated the total RNA fraction extracted from a phytopathogenic ascomycete fungus, Alternaria alternata (Pleosporales, Dothideomycetes), infected with Alternaria alternata hypovirus 1 (AaHV1), a virus related to CHV1 (51). Accumulation of AaHV1 genomic RNA was detected in the uninoculated upper leaves at 7 dpi, but viral symptoms were not observed (SI Appendix, Fig. S7). This result suggests that certain fungal viruses (at least hypoviruses) can infect plants when the plant viral MP is provided in trans.
+
+<center><img src="https://www.pnas.org/content/pnas/117/7/3779/F1.large.jpg?width=800&height=600&carousel=1" width="500"></center>
+
+- TMV Infection Enhances CHV1 Accumulation in Plants.
+  - The CHV1 ORF A encodes p69, a polyprotein that is proteolytically processed into p29 and p40 (Fig. 1A) (33). The p29 protein is an RNA silencing (or RNAi) suppressor that functions by inhibition of the up-regulation of key RNAi genes (43, 52).
+  - CHV1 mutants for p69 and p29 --> Although p69 is dispensable for CHV1 replication in the fungus, it appears to be essential for CHV1 replication and/or accumulation in the *N.tabacum* 30K plant.
+  - *N.tabacum* 30K + CHV1 mutants + TMV coinfection --> TMV infection enhances CHV1 accumulation and rescues CHV1-Δp69 accumulation in tobacco.
+
+- CHV1 Infection Enhances TMV Accumulation in Fungi.
+  - The synergism between the plant and fungal viruses in plants prompted us to explore whether such interactions occur in the fungal system. We used *F. graminearum* for this investigation owing to our initial findings that the fungus is a compatible host of CHV1 and TMV. Hence, TMV, CHV1, and CHV1 mutants were introduced into F. graminearum by protoplast transfection.
+  - After fungal growth and sporulation, both CHV1 and TMV were transmitted vertically through asexual spores (conidia), and coinfection with CHV1 enhanced TMV vertical transmission
+  - CHV1 confers a one-way synergistic effect on TMV replication and/or accumulation in F. graminearum.
+  - p29 is essential for the high accumulation of CHV1 in F. graminearum
+
+<center><img src="https://www.pnas.org/content/pnas/117/7/3779/F2.large.jpg?width=800&height=600&carousel=1" width="500"></center>
+
+- An RNA Silencing Mechanism Suppresses TMV Accumulation in Fungi.
+  - RNA silencing mechanisms have been shown to operate against fungal viruses (44, 54⇓–56) and viroids (24) in fungi, so we investigated whether similar mechanisms affect plant virus infection in fungi.
+  - Dicer-like proteins in ascomycetes (dcl1, dcl2)
+  - TMV was introduced by protoplast transfections to F. graminearum single dcl knockout mutants (Δdcl1 and Δdcl2) and a double dcl knockout mutant (Δdcl1/2). TMV infection strongly reduced the growth of the Δdcl1/2 mutant but not the Δdcl1 and Δdcl2 mutants
+  - RNA silencing has a substantial effect on suppression of TMV replication in *F. graminearum*, and this finding agrees with our previous observation that the silencing suppressor activity of CHV1 p29 is responsible for the synergistic effects on TMV accumulation in F. graminearum (Fig. 2G).
+
+- Plant Virus Infection Facilitates Transfer of CHV1 from Fungi to Plants.
+  - Plant virus and viroids could be bidirectionally transferred between plants and fungi during colonization of plant tissue by fungal pathogens (23, 24).
+  - First, we designed a fungal inoculation experiment in which a *F. graminearum* strain carrying CHV1 (Fig. 2A) was inoculated to *N. tabacum* plants infected with TMV, PVX, PVY, or CMV or that were virus free (mock, Fig. 3A). 
+    - At 10 d after fungal inoculation, uninoculated upper leaves were tested for the presence of CHV1:
+      - all six plants infected with TMV were also infected with CHV1, whereas two of six plants that were infected with PVX, PVY, or CMV were coinfected with CHV1 (Fig. 3B). In contrast, none of the six virus-free plants were CHV1 positive (Fig. 3B). 
+      - This result demonstrates that the plant virus infections facilitate transmission of CHV1 from fungi to *N. tabacum*. The result also indicates that among the plant virus infections tested, TMV was the most effective in promoting CHV1 transfers to the plant.
+  - Second fungal inoculation experiment, a *F. graminearum* strain carrying both CHV1 and TMV (Fig. 2A) was inoculated to virus-free plants, and at 10 d after inoculation, virus infections in the upper uninoculated leaves were detected by RT-PCR (SI Appendix, Fig. S11A). 
+    - All six plants tested were infected with both CHV1 and TMV (SI Appendix, Fig. S11B). 
+      - Thus, in this situation, TMV was transmitted efficiently from the fungus to the plants and facilitated systemic spread of CHV1 within the plant.
+  - Once fungal viruses are transferred from an infecting fungus to a plant, they can spread systemically in the plant with the assistance of a plant virus. Fungal viruses can then be acquired by similar or different fungal species that concurrently colonize other parts of the plant. This conceivably can enable transmission of fungal viruses to vegetatively incompatible strains or to different fungal species. 
+
+<center><img src="https://www.pnas.org/content/pnas/117/7/3779/F3.large.jpg?width=800&height=600&carousel=1" width="500"></center>
+
+&nbsp;
+
+- CHV1 Infection Enhances the Transmission Efficiency of TMV from Plant to Fungi.
+
+&nbsp;
+
+<center><img src="https://www.pnas.org/content/pnas/117/7/3779/F4.large.jpg?width=800&height=600&carousel=1" width="500"></center>
+
+&nbsp;
+
+--------------------
+
+&nbsp;
+
+### G-N
+
+>**Mahillon, M., Romay, G., Liénard, C., Legrève, A., & Bragard, C. (2020). Description of a Novel Mycovirus in the Phytopathogen Fusarium culmorum and a Related EVE in the Yeast Lipomyces starkeyi.** Viruses, 12(5), 523. https://doi.org/10.3390/v12050523
+
+- Methods:
+  - The majority of known mycoviruses are made of dsRNA [1], hence screening for dsRNA in fungal mycelia is a fast method to discover new mycoviruses. Despite the fact that dsRNA molecules have been previously detected in F. culmorum, no viral sequence has been described yet [9,10]. By screening our laboratory collection of this fungal species, we found a dsRNA element in the strain A104-1. This dsRNA was fully sequenced and was putatively assigned to a new viral species for which primary bioinformatics and biological analyses are given
+  - Recovery of FcV1 dsRNA
+    - dsRNA extraction was done on 100 mg of dried mycelium according to a cellulose-based protocol [12]. The dsRNA nature of the detected band was proven by resistance to treatment with DNase 1 and S1 nuclease (Thermo Scientific, Waltham, MA, USA). Following agarose gel electrophoresis, the gel band containing the dsRNA was excised and incubated overnight (O/N) in 100 µL of milliQ water at 4 °C. Centriguation, supernatant, etc.
+  - Full Genome Sequencing. A volume of 5 µL of the purified dsRNA solution was used to perform a reverse transcription using the M-MLV reverse transcriptase (Promega Madison, WI, USA) with the degenerate primer 5′-GACGTCCAGATCGCGAATTCNNNNNN-3′, according to Wang et al. [13]. The resulting cDNA was amplified by PCR using the GoTaq polymerase (Promega Madison, WI, USA) and including the primer 5′-GACGTCCAGATCGCGAATTC-3′. Two major amplicons were obtained and cloned inside the pGEM-T Easy vector (Promega Madison, WI, USA). The plasmids were then used to transform chemically competent E. coli 10β cells. The plasmids were subsequently sequenced using the forward and reverse M13 universal primers. Then, primers corresponding to the viral sequences were designed and used to obtain the sequence of the gap between the obtained amplicons. Amplicons were directly sequenced.
+  - Genome Sequence Analysis. The whole genome of FcV1 was assembled using UGene [15]. The RNA secondary structure of FcV1 3′-termini was predicted via the Mfold server, using default parameters except the temperature set at 25 °C [16]. For analysis of ORF1p of unirnaviruses, ustiviruses and amalgaviruses, sequences were retrieved from Genbank database (Table S1). Sequences were aligned via MUSCLE [17]. A pairwise identity matrix was obtained via the SDT software [18]. A similarity plot for the alignment of unirnaviruses ORF1p was generated using Plotcon (http://www.bioinformatics.nl/cgi-bin/emboss/plotcon, with default parameters) and the prediction of coiled coil was made using Deepcoil [19]. Remote homologs were searched using the HMMERsearch software [20] with the aligned sequences of unirnaviruses ORF1p as a query. For analysis of ORF2, sequences were first retrieved from the Genbank database (Table S2). Then, sequences were aligned via MUSCLE. For phylogenetic analysis, the best fit substitution model (rtREV+F+I+G4) for this alignment was found via ModelFinder [21] and used to create a maximum-likelihood phylogenetic tree via IQ-TREE [22], with ultrafast bootstrap (1000 replicates) [23]. The tree was visualized using MEGA-X [24]. Alternatively, a phylogenetic tree was also obtained using MrBayes (with rtREV model) [25] and visualized using MEGA-X.
+
+&nbsp;
+
+--------------------
+
+&nbsp;
+
+### O-T
+
+>**Son M, Yu J, Kim K-H (2015) Five Questions about Mycoviruses.** PLoS Pathog 11(11): e1005172. https://doi.org/10.1371/journal.ppat.1005172
+
+- Unique characteristics:
+  1. most mycoviruses lack an extracellular route for infection; 
+  2. mycoviruses are transmitted intercellularly only through cell division, sporulation, and cell fusion;
+  3. mycoviruses apparently <u>lack a movement protein</u>, which is essential for the life cycle of animal and plant viruses
+
+- Long summary in "General > Papers"
+
+- Families:
+  - 7 linear dsRNA (important: *Partiviridae*)
+  - 5 linear +ssRNA (important: *Hypoviridae: CHV1-4, FgV1*)
+  - linear -ssRNA
+  - circular ssDNA
+
+- Detection: purification of dsRNA molecules because many mycoviruses produce dsRNA or dsRNA replicative intermediates in their fungal hosts (https://doi.org/10.1111/j.1364-3703.2008.00503.x)
+
+- Cross-kingdom: 
+  - Family *Partitiviridae* contained dsRNA viruses that infect plants, fungi, or protozoa (https://doi.org/10.1016/j.virusres.2014.04.007)
+  - +ssRNA genomic organization and expression strategy resemble those of plant potyviruses or potex-like viruses (https://www.sciencedirect.com/science/article/pii/S004268221500080X?via%3Dihub)
+  - *Sclerotinia scerotiorum* RNA virus L is closely related to the human pathogen hepatitis E virus and rubi-like viruses
+  - Three-way symbiotic relationship among a mycovirus, an endophytic fungus, and tropical panic grass; in the absence of the mycovirus, the endophytic fungus and grass cannot survive high soil temperatures (https://science.sciencemag.org/content/315/5811/513)
+
+- Origin:
+  - “ancient coevolution hypothesis” states that although the origin of mycoviruses is unknown, the association between mycoviruses and fungi is ancient and reflects long-term coevolution. 
+  - “plant virus hypothesis,” in contrast, suggests that mycoviruses originated relatively recently from plant viruses; i.e., the original mycovirus was a plant virus that moved from plant to fungus within the same host plant. Similar scenarios might also explain the origin of plant viruses; i.e., some plant viruses may have originated from mycoviruses that moved from fungus to plant
+  
+- Effects on hosts:
+  - Usually remain latent and seldom induce symptoms
+  - Some cause dramatic changes including irregular growth, abnormal pigmentation, and altered sexual reproduction
+  - Hypovirulence in plant-pathogenic fungi (CHV1, FgV, Sclerotinia viruses, Helminthosporium viruses, Rosellinia viruses)
+      - FgV1 can also be transmitted to *C. parasitica* and to other *Fusarium* species, and FgV1 induces more severe hypovirulence than CHV1 in *C. parasitica* (https://doi.org/10.1371/journal.pone.0021629)
+
+- Transmission:
+  - Virus transmission between different strains is restricted by fungal vegetative incompatibility (vic). 
+  - Vegetative incompatibility is an obstacle in the use of hypovirulent mycoviruses as biological control agents. Recent research has demonstrated that the seven vic genes associated with five of six vic loci in *C. parasitica* contribute to incompatibility and affect virus transmission.
+  
+- Alteration of host gene expression   
+  - Mycoviruses reprogram host cell metabolism in order to replicate within host cells and avoid antiviral responses
+  - <span style="color: gray;">RNA-Seq–based, genome-wide expression analysis</span> Distinct expression patterns of *F. graminearum* transcriptomes in response to infections by four phylogenetically different mycoviruses (FgV1–4) (https://doi.org/10.1371/journal.pone.0100989). 
+    - Transcriptome change: FgV3 and FgV4 >> FgV1 and FgV2 
+    - Phenotypic change: FgV1 and FgV2 >>>> FgV3 and FgV4 (none)
+  - Mycoviruses depend on various host factors as well as cellular processes and pathways, including those related to metabolism, cellular transport, RNA processing, and signaling.
+
+&nbsp;
+  
+<center><img src="https://journals.plos.org/plospathogens/article/figure/image?size=large&id=info:doi/10.1371/journal.ppat.1005172.t001" width="700"></center>
+
+&nbsp;
+
+- RNA silencing (quelling)
+  - Virus-induced quelling has been reported in *C. parasitica* and *Aspergillus nidulans* [25]. 
+    - In *C. parasitica*, dcl2 and agl2 genes, which are required for RNA-silencing antiviral defense responses, are induced by CHV1 infection [26]. 
+    - In *F. graminearum* Significant changes of expression level of some silencing-related genes (rdr1, dcl1, dcl2, and agl2) upon virus infection were also observed. 
+      - Transcript accumulation levels of dcl2 and agl2 were decreased only in FgV1-infected F. graminearum, whereas accumulation levels of these transcripts were increased by FgV2–4 infections.
+    - To reduce a host’s virus defense responses, mycoviruses produce silencing suppressors that incapacitate RNA silencing. For example, the p29 protein of mycovirus CHV1 and the S10 gene product of Rosellinia necatrix mycoreovirus 3 function as silencing suppressors.
+
+&nbsp;
+
+--------------------
+
+&nbsp;
+
+### U-Z
+
+## Seminarios {.tabset}
+
+### May 2021
+
+>Jonatan Niño, "SUPERA: SUstainable Plant health by Environmental RNAi to reduce disease impacts on Agriculture and forestry"
+
+- RNAi (DICER: RNA nuclease III, RISC: RNA-induced silencing complex)
+
+<center><img src="https://www.gene-quantification.de/siRNA-mechanism.png" width="350"></center>
+
+- Cross-kingdom RNA interference (CKRI) is a bidirectional process
+  - Weiber et al 2013 (Science)
+  - Plants and fungus can exchange RNAi complexes through exosomes. 
+    - Plant RNAis silence genes for vesicles' traffic in fungus
+  - Transgenic plants resistant to fungus DICER
+  - HGIS: host-induced gene silencing
+    - Pros: Versatile (target multiple pathogenes), doesn't require complete homology, environmental friendly
+    - Cons: Generation of transgenic plants, difficulties in transofrming many plant species, uncertain efficiency in post-harvest product (harvested fruit doesn't produce RNAi any longer)
+    
+- Solution: environmental RNAi.
+  - Exposure of eukaryotic organisms to dsRNA trigges expression of RNAi
+  - SIGS: spray-induced gene silencing (direct application, also available in F.graminearum)
+    - Pros: No transgenic plants, pre and post-harvest
+    - Cons: Transient silencing effect, RNA inestability
+      - How to overcome inestability? Organic nanovesicles or inorganic nanoparticles
+
+- SUPERA. RNA targeting: indentify virulence or essential genes and paths in pathogenes
+  - Design specific and effector RNA fragments for SIGS --> avoid secondary structures that might be recognized by RISC. Avoid off-target effects (OTEs)
+  - RNA production. Optimize in vivo dsRNA production using genetically modified bacteria --> RNAseIII null mutant *E.coli* strain HT115
+    - Autolytical plasmid that releases RNAi. Commercial issues with *E.coli* --> *Bacillus subtilis*
+  - Evaluate different dsRNA encapsulation strategies:
+    - Artificial vesicles + dsRNA. RNA is protected from nucleases. Try out efficiency in leaves + fungus.
+    - Ouer membrane vesicles (OMV) / bacterial extracellular vesicles (EVs). Valguarnera et al, 2021.
+    
+### June 2021
+
+&nbsp;
+
+--------------------
+
+&nbsp;
